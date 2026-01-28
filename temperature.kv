@@ -1,0 +1,75 @@
+TemperatureBoxLayout:
+<TemperatureBoxLayout>:
+    orientation: "vertical"
+    padding: dp(40)
+    spacing: dp(25)
+
+    Label:
+        text: "TEMPERATURE\nCONVERTER"
+        halign: 'center'
+        font_size: dp(35)
+        bold: True
+        color: 0.2, 0.6, 1, 1
+        size_hint_y: None
+        height: dp(120)
+
+    TextInput:
+        id: textinput
+        hint_text: "Enter Value"
+        multiline: False
+        input_filter: "float"
+        size_hint: (0.6, None)
+        height: dp(60)
+        pos_hint: {'center_x': 0.5}
+        font_size: dp(22)
+        halign: 'center'
+        padding_y: [self.height / 2.0 - (self.line_height / 2.0), 0]
+        background_normal: ''
+        background_color: (0.95, 0.95, 0.95, 1)
+
+    BoxLayout:
+        orientation: "horizontal"
+        spacing: dp(15)
+        size_hint_y: None
+        height: dp(60)
+
+        Button:
+            text: "FAHRENHEIT TO CELSIUS"
+            on_press: root.button()
+            bold: True
+            background_normal: ''
+            background_color: 0.1, 0.5, 0.8, 1
+
+        Button:
+            text: "CELSIUS TO FAHRENHEIT"
+            on_press: root.button2()
+            bold: True
+            background_normal: ''
+            background_color: 0.1, 0.7, 0.6, 1
+    BoxLayout:
+        spacing : 20
+        Button:
+            orientation:"vertical"
+            text:"CELSIUS TO KELVIN"
+            on_release:root.button3()
+            bold: True
+            background_normal: ''
+            background_color: 0.1, 0.7, 0.6, 1
+            pos_hint:{"center_x":.5,"center_y":.5}
+            size_hint : .5,None
+            height : dp(60)
+        Button:
+            text:"FAHRENHEIT TO KELVIN"
+            on_release:root.button4()
+            bold: True
+            background_normal: ''
+            background_color: 0.1, 0.6, 0.8, 1
+            pos_hint:{"center_x":.5,"center_y":.5}
+            size_hint : .5,None
+            height : dp(60)
+
+    Label:
+        text: root.text
+        color: 1, 1, 1, 1
+        font_size: dp(24)
+        bold: True
